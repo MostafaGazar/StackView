@@ -23,10 +23,20 @@ This was inspired by [SwipeStack](https://github.com/flschweiger/SwipeStack) and
 
 ## Download
 
+Step 1. Add the JitPack repository to your root build.gradle at the end of repositories
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+Step 2. Add the StackView dependency
 ```
 dependencies {
     ...
-    implementation TBD
+    implementation 'com.github.MostafaGazar:StackView:1.0.0'
     ...
 }
 ```
