@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">#000</color>
+    <color name="color_primary_variant">#D81B60</color>
+
+    <color name="color_secondary">#999</color>
+
+    <color name="color_error">#F44336</color>
+    <color name="color_on_error">#FFFFFF</color>
+
+    <color name="color_background">#FAFBFC</color>
+    <color name="color_on_background">#000000</color>
+
+</resources>

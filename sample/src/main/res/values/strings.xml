@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Stack of Cards</string>
+
+    <string name="dummy_text">A bunch of text goes here</string>
+</resources>
