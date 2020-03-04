@@ -23,7 +23,7 @@ This was inspired by [SwipeStack](https://github.com/flschweiger/SwipeStack) and
 
 ## Download
 
-Step 1. Add the JitPack repository to your root build.gradle at the end of repositories
+Step 1. Add the JitPack repository to your root build.gradle at the end of **`allprojects`** repositories
 ```
 allprojects {
     repositories {
