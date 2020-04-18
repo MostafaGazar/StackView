@@ -235,6 +235,15 @@ class StackView @JvmOverloads constructor(
         return super.onTouchEvent(event)
     }
 
+    fun next() {
+        val rtl = resources.getBoolean(R.bool.is_rtl)
+        if (rtl) {
+            swipeItemToLeft()
+        } else {
+            swipeItemToRight()
+        }
+    }
+
     private fun addItem(childView: View, index: Int, order: Int) {
         val width = width - (paddingStart + paddingEnd)
         val height = height - (paddingTop + paddingBottom)
