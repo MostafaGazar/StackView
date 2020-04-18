@@ -6,5 +6,6 @@
         <attr name="stack_animation_duration" format="integer"/>
         <attr name="stack_swipe_rotation" format="float"/>
         <attr name="stack_swipe_opacity" format="float"/>
+        <attr name="stack_enable_elevation" format="boolean"/>
     </declare-styleable>
 </resources>

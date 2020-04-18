@@ -26,10 +26,10 @@ private const val KEY_SUPER_STATE = "superState"
 private const val KEY_CURRENT_INDEX = "currentIndex"
 
 private const val DEFAULT_STACK_MAX_SIZE = 3
-// FIXME :: Remove * 10
 private const val DEFAULT_ANIMATION_DURATION = 300 * 1
 private const val DEFAULT_SWIPE_ROTATION = 20F
 private const val DEFAULT_SWIPE_OPACITY = 1F
+private const val DEFAULT_ENABLE_ELEVATION = true
 
 class StackView @JvmOverloads constructor(
     context: Context,
@@ -52,6 +52,7 @@ class StackView @JvmOverloads constructor(
     private var animationDuration = DEFAULT_ANIMATION_DURATION
     private var swipeRotation = DEFAULT_SWIPE_ROTATION
     private var swipeOpacity = DEFAULT_SWIPE_OPACITY
+    private var enableElevation = DEFAULT_ENABLE_ELEVATION
 
     private var currentIndex = 0
     private val topViewIndex
@@ -102,6 +103,10 @@ class StackView @JvmOverloads constructor(
                 swipeOpacity = attributeArray.getFloat(
                     R.styleable.StackView_stack_swipe_opacity,
                     DEFAULT_SWIPE_OPACITY
+                )
+                enableElevation = attributeArray.getBoolean(
+                    R.styleable.StackView_stack_enable_elevation,
+                    DEFAULT_ENABLE_ELEVATION
                 )
             } finally {
                 attributeArray.recycle()
@@ -283,7 +288,7 @@ class StackView @JvmOverloads constructor(
             paddingTop + childView.measuredHeight
         )
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (enableElevation && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             childView.translationZ = index.toFloat()
         }
 
@@ -372,7 +377,6 @@ class StackView @JvmOverloads constructor(
             .rotation(-swipeRotation)
 //            .alpha(0f)
             .setDuration(animationDuration.toLong())
-//            .setDuration(10 * animationDuration.toLong())
             .setInterpolator(LinearOutSlowInInterpolator())
             .setListener(object: AnimatorListener() {
                 override fun onAnimationEnd(animation: Animator?) {
